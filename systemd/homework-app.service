@@ -1,0 +1,16 @@
+[Unit]
+Description=Linux DevOps Homework Service
+After=network.target
+
+[Service]
+Type=simple
+User=homework
+Group=homework
+ExecStart=/opt/linux-devops-homework/server.py
+Restart=on-failure
+RestartSec=2
+StateDirectory=linux-devops-homework
+StateDirectoryMode=0750
+
+[Install]
+WantedBy=multi-user.target
